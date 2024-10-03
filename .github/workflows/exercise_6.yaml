@@ -25,7 +25,7 @@ jobs:
       # runs if previous jobs failed and test-app was not successful (failure/cancelled)
       - name: test-failed
         if: failure() && steps.test-app.outcome != 'success'
-        run: echo "Tests failed" && |
+        run: 
           sed 's/test-passing-green/test-failing-red/' README.md
           git config user.email "flo.delporte2gmail.com"
           git config user.name "fadlport"
@@ -35,7 +35,7 @@ jobs:
 
       # runs if tests are succesfull
       - name: test-passed
-        run: echo "Tests passed" && |
+        run: 
           sed 's/test-failing-red/test-passed-green/' README.md
           git config user.email "flo.delporte2gmail.com"
           git config user.name "fadlport"
