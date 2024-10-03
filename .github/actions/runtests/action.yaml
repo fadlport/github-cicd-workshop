@@ -1,0 +1,16 @@
+name: Test
+description: run tests and output boolean
+
+outputs:
+  testPassed:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Test check
+      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      shell: bash
+

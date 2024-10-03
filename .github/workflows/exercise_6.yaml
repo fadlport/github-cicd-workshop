@@ -1,0 +1,36 @@
+name: Exercise 6
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  badge:
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+         python-version: '3.12'
+      - name: Install pytest
+        run: pip install pytest
+        
+
+      # Mock to test workflow
+      - name: Test app
+        id: test-app # will be referenced later
+        run: pytest .
+
+      
+
+      # runs if previous jobs failed and test-app was not successful (failure/cancelled)
+      - name: test-failed
+        if: failure() && steps.test-app.outcome != 'success'
+        run: echt "Tests failed"
+
+      # runs if previous jobs failed and test-app was not successful (failure/cancelled)
+      - name: test-passed
+        run: echt "Tests passed"
+
