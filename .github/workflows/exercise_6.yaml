@@ -29,6 +29,7 @@ jobs:
           sed 's/test-passing-green/test-failing-red/' README.md
           git config user.email "flo.delporte2gmail.com"
           git config user.name "fadlport"
+          git add README.md
           git commit -am "tests failed"
           git push
 
@@ -39,5 +40,6 @@ jobs:
           sed 's/test-failing-red/test-passed-green/' README.md
           git config user.email "flo.delporte2gmail.com"
           git config user.name "fadlport"
+          git add README.md
           git commit -am "tests passed"
           git push
