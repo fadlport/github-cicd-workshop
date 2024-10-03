@@ -9,7 +9,7 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - name: Print Hello World
-      uses: fadlport/github-cicd-workshop@v3
+    - name: Print Hello World 
+      uses: ./.github/actions/greet_people
       with:
           who-to-greet: 'Florence'
