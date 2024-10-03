@@ -1,6 +1,6 @@
 # GitHub Actions Course
 
-[![Test Status](https://img.shields.io/badge/test-failing-red
+[![Test Status](https://img.shields.io/badge/test-passed-green
 )](https://github.com/datamindedacademy/github-cicd/actions/workflows/test-and-badge.yaml)
 
 Welcome to the GitHub Actions Course! This repository serves as a guide to help you set up your own repository to explore and learn GitHub Actions independently using your GitHub account.
