@@ -28,9 +28,9 @@ jobs:
       # runs if previous jobs failed and test-app was not successful (failure/cancelled)
       - name: test-failed
         if: failure() && steps.test-app.outcome != 'success'
-        run: echt "Tests failed"
+        run: echo "Tests failed"
 
       # runs if previous jobs failed and test-app was not successful (failure/cancelled)
       - name: test-passed
-        run: echt "Tests passed"
+        run: echo "Tests passed"
 
