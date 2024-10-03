@@ -20,10 +20,10 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     needs: [build-and-push]
-    # strategy:
-    #   matrix:
-    #     version: [dev, prod, int]
-    environment: prod
+    strategy:
+       matrix:
+         version: [dev, prod, int]
+    environment: ${{ matrix.version }}
     steps:
       - name: deploy
         run: echo deploy
