@@ -31,7 +31,7 @@ jobs:
           git config user.name "fadlport"
           git add .
           git commit -am "tests failed"
-          git push origin HEAD:master
+          git push
 
 
       # runs if tests are succesfull
@@ -48,5 +48,5 @@ jobs:
         run: |
           git add .
           git commit -am "tests passed"
-          git push origin HEAD:master
+          git push
 
