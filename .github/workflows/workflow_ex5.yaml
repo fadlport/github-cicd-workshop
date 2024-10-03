@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print Hello World 
-      uses: actions/checkout
+      uses: actions/checkout@v4
     - uses: ./.github/actions/greet_people
       with:
           who-to-greet: 'Florence'
