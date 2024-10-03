@@ -1,0 +1,27 @@
+name: Python CI
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    # Add step to install dependencies
+    - name: Install pylint
+      uses: pip install pytest
+    - name: Run pytest
+      uses: pytest exercise_2/test_code.py 
+    - name: Run pytest part 2
+      uses: pytest exercise_2
+
+  # lint:
+  #   # Complete the lint job configuration
+  #   - name: flake* install
+  #    - uses: flake8 .
