@@ -1,0 +1,18 @@
+name: HelloAction
+description: greet someone
+
+
+inputs:
+  who-to-greet: 
+    description: who to greet
+    required: true
+    default: world
+
+
+runs:
+  using: composite
+  steps:
+  - name: Set greeting
+    run: echo "Hello $INPUT_WHO_TO_GREET"
+    shell: bash
+

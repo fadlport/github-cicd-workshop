@@ -1,0 +1,13 @@
+name: Exercise 5
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Hello World
+      uses: ./exercise_5_extra/HelloAction
