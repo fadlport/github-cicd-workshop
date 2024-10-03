@@ -36,10 +36,17 @@ jobs:
 
       # runs if tests are succesfull
       - name: test-passed
-        run: |
+        run:
           sed -i 's/test-failing-red/test-passed-green/' ./README.md
+      - name: test
+        run: cat README.md
+      - name: git config
+        run: |
           git config user.email "flo.delporte@gmail.com"
           git config user.name "fadlport"
+      - name: add, commit push
+        run: |
           git add .
           git commit -am "tests passed"
           git push origin HEAD:master
+
