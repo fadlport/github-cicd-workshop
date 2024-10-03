@@ -27,7 +27,7 @@ jobs:
         if: failure() && steps.test-app.outcome != 'success'
         run: |
           sed 's/test-passing-green/test-failing-red/' README.md
-          git config user.email "flo.delporte2gmail.com"
+          git config user.email "flo.delporte@gmail.com"
           git config user.name "fadlport"
           git add README.md
           git commit -am "tests failed"
