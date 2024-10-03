@@ -11,3 +11,5 @@ jobs:
     steps:
     - name: Print Hello World
       uses: actions/checkout@v2
+      with:
+          who-to-greet: 'Florence'

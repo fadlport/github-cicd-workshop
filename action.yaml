@@ -8,11 +8,12 @@ inputs:
     required: true
     default: world
 
-
 runs:
-  using: composite
+  using: "composite"
   steps:
-  - name: Set greeting
-    run: echo "Hello $INPUT_WHO_TO_GREET"
-    shell: bash
+    - name: Set Greeting
+      run: echo "Hello $INPUT_WHO_TO_GREET."
+      shell: bash
+      env:
+        INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
 
