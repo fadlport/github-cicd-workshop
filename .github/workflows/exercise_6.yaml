@@ -29,6 +29,7 @@ jobs:
           sed -i 's/test-passing-green/test-failing-red/' ./README.md
           git config user.email "flo.delporte@gmail.com"
           git config user.name "fadlport"
+          git pull
           git add .
           git commit -am "tests failed"
           git push
