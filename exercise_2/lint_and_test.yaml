@@ -17,3 +17,4 @@ jobs:
 
   lint:
     # Complete the lint job configuration
+    - name: test
