@@ -7,16 +7,16 @@ on:
 
 jobs:
   badge:
-    runs-on: ubuntu-latest
-    steps:
+     runs-on: ubuntu-latest
+     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+         python-version: '3.12'
       - name: Install pytest
         run: pip install pytest
-
+        
       # Mock to test workflow
       - name: Test app
         id: test-app # will be referenced later
@@ -29,17 +29,15 @@ jobs:
           sed -i 's/test-passing-green/test-failing-red/' ./README.md
           git config user.email "flo.delporte@gmail.com"
           git config user.name "fadlport"
-      - name: part2
-        if: failure() && steps.test-app.outcome != 'success'
-        run: |
-          git pull
           git add .
           git commit -am "tests failed"
           git push
 
+
       # runs if tests are succesfull
       - name: test-passed
-        run: sed -i 's/test-failing-red/test-passed-green/' ./README.md
+        run:
+          sed -i 's/test-failing-red/test-passed-green/' ./README.md
       - name: test
         run: cat README.md
       - name: git config
@@ -51,3 +49,4 @@ jobs:
           git add .
           git commit -am "tests passed"
           git push
+
