@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print Hello World
-      uses: HelloAction@v2
+      uses: actions/greet_people@v2
       with:
           who-to-greet: 'Florence'
