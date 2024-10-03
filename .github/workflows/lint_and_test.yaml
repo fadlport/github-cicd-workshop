@@ -15,11 +15,11 @@ jobs:
         python-version: '3.12'
     # Add step to install dependencies
     - name: Install pylint
-      uses: pip install pytest
+      run: pip install pytest
     - name: Run pytest
-      uses: pytest exercise_2/test_code.py 
+      run: pytest exercise_2/test_code.py 
     - name: Run pytest part 2
-      uses: pytest exercise_2
+      run: pytest exercise_2
 
   # lint:
   #   # Complete the lint job configuration
