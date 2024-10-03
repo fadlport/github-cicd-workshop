@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print Hello World
-      uses: .github/actions/greet_people@v3
+      uses: fadlport/github-cicd-workshop@v3
       with:
           who-to-greet: 'Florence'
